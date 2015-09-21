@@ -26,7 +26,7 @@ Once the project moves into development, the press release can be used as a touc
   > Everyone makes predictions: pundits, analysts, sportscasters, writers, our friends and family, ourselves.  But so often, once a prediction is made, no one follows up to determine if that prediction was accurate or not.  Predictster aims to solve this problem.
 
 ## Solution ##
-  > Quickly and easily post a prediction on Predictster.  Tell us who made the prediction, what it's about, when an outcome will be known, and even include a link.  Post the prediction to Twitter if you would like.  We will follow up with you at the time you specify for you to validate whether the prediction was accurate.
+  > Quickly and easily post a prediction on Predictster.  Tell us who made the prediction, what it's about, when an outcome will be known, and even include a link to a relevant news story.  Post the prediction to Twitter if you would like.  We will follow up with you at the time you specify for you to validate whether the prediction was accurate.
 
 ## Quote from You ##
   > "Predictster brings accountably to prediction markets."
