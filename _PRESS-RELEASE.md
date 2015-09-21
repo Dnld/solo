@@ -1,4 +1,4 @@
-# Project Name #
+# Predictster #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -15,30 +15,27 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
- 
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+## A tool to track predictions. ##
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Predictster allows you to save anyone's prediction and follow-up later to record whether that prediction was correct.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Everyone makes predictions: pundits, analysts, sportscasters, writers, our friends and family, ourselves.  But so often, once a prediction is made, no one follows up to determine if that prediction was accurate or not.  Predictster aims to solve this problem.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Quickly and easily post a prediction on Predictster.  Tell us who made the prediction, what it's about, when an outcome will be known, and even include a link.  Post the prediction to Twitter if you would like.  We will follow up with you at the time you specify for you to validate whether the prediction was accurate.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "Predictster brings accountably to prediction markets."
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Log on with your Twitter account and start posting predictions.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "I have a friend who always seems to think he knows where the stock market will be by next month.  With Predictster, I can track how good of a stock picker he actually is."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Check it out for yourself today.
