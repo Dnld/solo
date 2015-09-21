@@ -9,7 +9,7 @@
     
   </head>
 
-  <body>
+  <body ng-app="predictster">
     
     <header>
       <h3>Predictster</h3>
@@ -20,18 +20,19 @@
       <a href="/predictions.html">Show Predictions</a>
     </nav>
     
-    <div class="prediction-form">
-      <form>
-        <label>Who</label><input type="text" name="entity">
-        <label>What</label><input type="textarea" name="description">
-        <label>When</label> <input type="date" name="date"> 
-        <label>Link</label> <input type="url" name="link"> 
+    <div class="prediction-form" ng-controller="getPrediction">
+      <form ng-submit="submitPrediction()">
+        <label>Who</label><input type="text" name="entity" ng-model="prediction.entity">
+        <label>What</label><input type="textarea" name="description" ng-model="prediction.event">
+        <label>When</label><input type="date" name="date" ng-model="prediction.date"> 
+        <label>Link</label><input type="url" name="link" ng-model="prediction.link"> 
         <input type="submit" class="submit-btn">
       </form> 
     </div>   
     
     <script src="lib/angular/angular.js"></script>
-    
+    <script src="app/app.js"></script>
+        
   </body>
   
 </html>
