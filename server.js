@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var db = require('./db');
+var utils = require('./utils');
 
 var app = express();
 
@@ -8,16 +8,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // api to post predictions
-app.post('/api/predictions', function(req, res) {
-  console.log(req.body);
-  
-  db.Predictions.create({
-    entity: req.body.entity,
-    description: req.body.description,
-    date: req.body.date,
-    link: req.body.link,
-    status: 'pending' 
+app.post('/api/predictions', function(req, res) {  
+  utils.addPrediction(req.body, function() {
+    res.sendStatus(200);
   });
+});
+
+// api to serve all predictions to client
+app.get('/api/all-predictions', function(req, res) {
   
 });
 
