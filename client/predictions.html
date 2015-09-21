@@ -9,7 +9,7 @@
     
   </head>
 
-  <body>
+  <body ng-app="predictster">
     
     <header>
       <h3>Predictster</h3>
@@ -20,11 +20,13 @@
       <a href="/predictions.html">Show Predictions</a>
     </nav>
     
-    <div class="all-predictions">
-      will display predictions here
+    <div class="all-predictions" ng-controller="displayPredictions">
+      <p ng-click="fetchPredictions()">get</p>
+      {{allPredictions}}
     </div>   
     
     <script src="lib/angular/angular.js"></script>
+    <script src="app/app.js"></script>
     
   </body>
   

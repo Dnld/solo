@@ -1,18 +1,37 @@
 angular.module('predictster', [])
 
-.controller('getPrediction', function($scope, $http) {
+.controller('addPrediction', function($scope, $http) {
   
   $scope.prediction = {};
   
   $scope.submitPrediction = function() {
-    console.log($scope.prediction);
-    
     $http({
       method: 'POST',
       url: '/api/predictions',
       data: $scope.prediction  
     });
-    
   };
 
+})
+
+.controller('displayPredictions', function($scope, $http) {
+  
+  $scope.allPredictions = [];
+  
+  $scope.fetchPredictions = function() {
+    $http({
+      method: 'GET',
+      url: '/api/all-predictions'
+    }).then(function(response) {
+      console.log(response.data);
+      $scope.allPredictions = response.data;
+    });
+  };
+  
+  $scope.init = function() {
+    $scope.fetchPredictions();
+  };
+  
+  $scope.init();
+  
 });

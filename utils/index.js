@@ -13,5 +13,5 @@ exports.addPrediction = function(data, callback) {
 
 // returns all predictions
 exports.sendAllPredictions = function(callback) {
-  
+  db.Predictions.findAll().then(callback);
 };

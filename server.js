@@ -16,7 +16,9 @@ app.post('/api/predictions', function(req, res) {
 
 // api to serve all predictions to client
 app.get('/api/all-predictions', function(req, res) {
-  
+  utils.sendAllPredictions(function(results) {
+    res.json(results);
+  });
 });
 
 // serves static dependencies
