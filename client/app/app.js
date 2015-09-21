@@ -54,7 +54,7 @@ angular.module('predictster', [])
       method: 'POST',
       url: '/api/prediction-status',
       data: data
-    });
+    }).then(window.location.reload());
   };
   
 });

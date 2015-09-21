@@ -18,8 +18,9 @@ exports.addPrediction = function(data, callback) {
 
 // updates prediction status
 exports.updatePredictionStatus = function(data, callback) {
-  db.Predictions.find({were: {id: data.id}}).then(
+  db.Predictions.findById(data.id).then(
     function(prediction) {
+      console.log(prediction);
       prediction.updateAttributes({
       status: data.status
       });
