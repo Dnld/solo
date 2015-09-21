@@ -2,8 +2,6 @@ var express = require('express');
 
 var app = express();
 
-app.get('/', function(req, res) {
-  res.send('up and running');
-});
+app.use(express.static(__dirname + "/client"));
 
 module.exports = app;
