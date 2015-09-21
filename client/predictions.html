@@ -21,8 +21,14 @@
     </nav>
     
     <div class="all-predictions" ng-controller="displayPredictions">
-      <p ng-click="fetchPredictions()">get</p>
-      {{allPredictions}}
+      <div class="prediction-view" ng-repeat="prediction in allPredictions">
+        <div class="prediction">
+          <p> {{prediction.entity}} <a href="{{prediction.link}}"> {{prediction.description}} </a><span ng-click="expand(prediction)"> {{prediction.status}} </span><p>
+          <div ng-show="prediction.show">
+            <p><a> right </a><a> wrong </a><a> pending </a></p>
+          </div>
+        </div>
+      </div>
     </div>   
     
     <script src="lib/angular/angular.js"></script>

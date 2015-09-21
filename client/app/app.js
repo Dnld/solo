@@ -34,4 +34,14 @@ angular.module('predictster', [])
   
   $scope.init();
   
+  $scope.expand = function(prediction) {
+    console.log('expand');
+    console.log(prediction);
+    if (!prediction.show) {
+      prediction.show = true;
+    } else {
+      prediction.show = false;
+    }
+  };
+  
 });
