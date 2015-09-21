@@ -44,4 +44,17 @@ angular.module('predictster', [])
     }
   };
   
+  $scope.updateStatus = function(status, prediction) {    
+    var data = {
+      id: prediction.id,
+      status: status
+    };
+    
+    $http({
+      method: 'POST',
+      url: '/api/prediction-status',
+      data: data
+    });
+  };
+  
 });

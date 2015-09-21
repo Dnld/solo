@@ -1,6 +1,11 @@
 var db = require('../db');
 
-// adds prediction to db
+// returns all predictions
+exports.sendAllPredictions = function(callback) {
+  db.Predictions.findAll().then(callback);
+};
+
+// fetches all prediction from db
 exports.addPrediction = function(data, callback) {
   db.Predictions.create({
     entity: data.entity,
@@ -11,7 +16,12 @@ exports.addPrediction = function(data, callback) {
   }).then(callback);
 };
 
-// returns all predictions
-exports.sendAllPredictions = function(callback) {
-  db.Predictions.findAll().then(callback);
+// updates prediction status
+exports.updatePredictionStatus = function(data, callback) {
+  db.Predictions.find({were: {id: data.id}}).then(
+    function(prediction) {
+      prediction.updateAttributes({
+      status: data.status
+      });
+    }).then(callback);
 };

@@ -25,7 +25,7 @@
         <div class="prediction">
           <p> {{prediction.entity}} <a href="{{prediction.link}}"> {{prediction.description}} </a><span ng-click="expand(prediction)"> {{prediction.status}} </span><p>
           <div ng-show="prediction.show">
-            <p><a> right </a><a> wrong </a><a> pending </a></p>
+            <p><a ng-click="updateStatus('right', prediction)">right</a><a ng-click="updateStatus('wrong', prediction)">wrong</a><a ng-click="updateStatus('pending', prediction)">pending</a></p>
           </div>
         </div>
       </div>
