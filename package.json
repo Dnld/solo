@@ -1,0 +1,20 @@
+{
+  "name": "predictster",
+  "version": "0.1.0",
+  "description": "a tool to bring accountability to prediction markets",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dnld/2015-08-solo.git"
+  },
+  "author": "Donald Steinert",
+  "dependencies": {
+    "bluebird": "^2.10.0",
+    "body-parser": "^1.14.0",
+    "express": "^4.13.3",
+    "mysql": "^2.9.0",
+    "request": "^2.63.0",
+    "sequelize": "^3.9.0"
+  }
+}
