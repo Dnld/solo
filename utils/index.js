@@ -36,8 +36,10 @@ exports.validateUser = function(data, callback) {
 };
 
 // returns all predictions
-exports.sendAllPredictions = function(callback) {
-  db.Predictions.findAll().then(callback);
+exports.sendAllPredictions = function(user, callback) {
+  db.Predictions.findAll({where:
+    {user: user}  
+  }).then(callback);
 };
 
 // fetches all prediction from db

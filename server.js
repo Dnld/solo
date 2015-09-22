@@ -41,7 +41,8 @@ app.post('/api/sign-in', function(req, res) {
 
 // api to serve all predictions to client
 app.get('/api/all-predictions', utils.checkUser, function(req, res) {
-  utils.sendAllPredictions(function(results) {
+  var user = req.session.user;
+  utils.sendAllPredictions(user, function(results) {
     res.json(results);
   });
 });
