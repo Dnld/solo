@@ -35,8 +35,15 @@ exports.validateUser = function(data, callback) {
     });
 };
 
-// returns all predictions
-exports.sendAllPredictions = function(user, callback) {
+// returns all public predictions
+exports.sendPublicPredictions = function(callback) {
+  db.Predictions.findAll({where: 
+    {private_prediction: null}
+  }).then(callback);
+};
+
+// returns specific user's predictions
+exports.sendUserPredictions = function(user, callback) {
   db.Predictions.findAll({where:
     {user: user}  
   }).then(callback);
@@ -52,7 +59,8 @@ exports.addPrediction = function(data, user, callback) {
     date: data.date,
     link: data.link,
     status: 'pending',
-    followup_email: 0
+    followup_email: 0,
+    private_prediction: data.privatePrediction
   }).then(
     function() {
       if (data.entityContact) {

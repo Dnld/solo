@@ -1,13 +1,13 @@
 var Sequelize = require('sequelize');
 
 // database for local development
-// var sequelize = new Sequelize('predictster', 'root', '');
+var sequelize = new Sequelize('predictster', 'root', '');
 
 // database for deployment
-var sequelize = new Sequelize('heroku_20de66428caf43d', 
-  'b580f2d952a1f3', 'f3b326cc', {
-  host: 'us-cdbr-iron-east-02.cleardb.net',
-});
+// var sequelize = new Sequelize('heroku_20de66428caf43d', 
+//   'b580f2d952a1f3', 'f3b326cc', {
+//   host: 'us-cdbr-iron-east-02.cleardb.net',
+// });
 
 exports.Predictions = Predictions = sequelize.define('Predictions', {
   user: Sequelize.STRING,
@@ -18,7 +18,8 @@ exports.Predictions = Predictions = sequelize.define('Predictions', {
   link: Sequelize.STRING,
   status: Sequelize.STRING,
   followup_link: Sequelize.STRING,
-  followup_email: Sequelize.INTEGER
+  followup_email: Sequelize.INTEGER,
+  private_prediction: Sequelize.BOOLEAN
 });
 
 exports.Users = Users = sequelize.define('Users', {

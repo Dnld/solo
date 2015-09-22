@@ -22,7 +22,7 @@
       </nav>
     </header>
     
-    <div class="container" class="search" ng-controller="displayUserPredictions">
+    <div class="container" class="search" ng-controller="displayPublicPredictions">
       <input type="text" ng-model="searchFilter" class="search" placeholder="search">
       <div class="prediction-view" ng-repeat="prediction in allPredictions | filter : searchFilter">
         <div class="prediction">

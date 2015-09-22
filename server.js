@@ -22,7 +22,7 @@ app.get('/', utils.checkUser, function(req, res) {
 // sign up
 app.post('/api/sign-up', function(req, res) {
   utils.addUser(req.body, function() {
-    console.log('added');
+    console.log('user added');
     req.session.loggedIn = true;
     req.session.user = req.body.email;
     res.sendStatus(200);
@@ -32,17 +32,24 @@ app.post('/api/sign-up', function(req, res) {
 // sign in
 app.post('/api/sign-in', function(req, res) {
   utils.validateUser(req.body, function() {
-    console.log('validated');
+    console.log('user validated');
     req.session.loggedIn = true;
     req.session.user = req.body.email;
     res.sendStatus(200);
   });
 });
 
-// api to serve all predictions to client
-app.get('/api/all-predictions', utils.checkUser, function(req, res) {
+// api to serve all predictions to public page
+app.get('/api/public-predictions', function(req, res) {
+  utils.sendPublicPredictions(function(results) {
+    res.json(results);
+  });
+});
+
+// api to serve user's predictions to private page
+app.get('/api/user-predictions', utils.checkUser, function(req, res) {
   var user = req.session.user;
-  utils.sendAllPredictions(user, function(results) {
+  utils.sendUserPredictions(user, function(results) {
     res.json(results);
   });
 });
