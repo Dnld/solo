@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="utf-8" />
+    <title>Predictster</title>
+    <link rel="stylesheet" href="lib/styles/style.css"/>
+    
+  </head>
+
+  <body ng-app="predictster">
+    
+    <header>
+      <h3 class="logo">Predictster</h3>
+    
+      <nav>
+        <a href="/signup.html">Sign Up</a>
+      </nav>
+    </header>
+    
+    <div class="container" ng-controller="signIn">
+      <form ng-submit="submitCredentials()">
+        <label>Email</label><input type="email" name="email" ng-model="credentials.email">
+        <label>Password</label><input type="password" name="password" ng-model="credentials.password">
+        <input type="submit" class="submit-btn">
+      </form> 
+    </div>   
+    
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/app/app.js"></script>
+        
+  </body>
+  
+</html>

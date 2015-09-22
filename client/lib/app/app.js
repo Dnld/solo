@@ -57,4 +57,40 @@ angular.module('predictster', [])
     }).then(window.location.reload());
   };
   
+})
+
+.controller('signUp', function($scope, $http) {
+  $scope.credentials = {};
+  
+  $scope.submitCredentials = function() {
+    $http({
+      method: 'POST',
+      url: '/api/sign-up',
+      data: $scope.credentials
+    }).success(
+      function() {
+        $scope.credentials = {};
+        window.location.pathname = '/';
+      }
+    );
+  };
+  
+})
+
+.controller('signIn', function($scope, $http, $location) {
+  $scope.credentials = {};
+  
+  $scope.submitCredentials = function() {
+    $http({
+      method: 'POST',
+      url: '/api/sign-in',
+      data: $scope.credentials
+    }).success(
+      function() {
+        $scope.credentials = {};
+        window.location.pathname = '/';
+      }
+    );
+  };
 });
+  
