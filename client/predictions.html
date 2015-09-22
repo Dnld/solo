@@ -20,13 +20,10 @@
       </nav>
     </header>
     
-    <div class="all-predictions" ng-controller="displayPredictions">
+    <div class="container" ng-controller="displayPredictions">
       <div class="prediction-view" ng-repeat="prediction in allPredictions">
         <div class="prediction">
-          <p> {{prediction.entity}} <a href="{{prediction.link}}"> {{prediction.description}} </a><span ng-click="expand(prediction)"> {{prediction.status}} </span><p>
-          <div ng-show="prediction.show">
-            <p><a ng-click="updateStatus('right', prediction)">right</a><a ng-click="updateStatus('wrong', prediction)">wrong</a><a ng-click="updateStatus('pending', prediction)">pending</a></p>
-          </div>
+          <p> {{prediction.entity}}: <a href="{{prediction.link}}"> {{prediction.description}}</a><span ng-if="!prediction.show" ng-click="expand(prediction)"> {{prediction.status}} </span><span ng-if="prediction.show" class="status-selector"><a ng-click="updateStatus('right', prediction)">right</a><a ng-click="updateStatus('wrong', prediction)">wrong</a><a ng-click="updateStatus('pending', prediction)">pending</a></span></p>
         </div>
       </div>
     </div>   

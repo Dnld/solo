@@ -68,6 +68,23 @@ html {
   font-family: verdana;
 }
 
+.container {
+  border: 1px solid gray;
+  border-radius: 30px;
+  margin-top: 130px;
+  padding: 60px 60px 40px 60px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 20px;
+  color: #636363;
+}
+
+/*  
+  ===============================================    
+  Header and Navigation
+  ===============================================
+*/
+
 header {
   margin: 40px;
 }
@@ -93,16 +110,11 @@ nav a {
   text-decoration: none;
 }
 
-.prediction-form {
-  border: 1px solid gray;
-  border-radius: 30px;
-  margin-top: 130px;
-  padding: 60px 60px 40px 60px;
-  margin-left: 20%;
-  margin-right: 20%;
-  font-size: 20px;
-  color: #636363;
-}
+/*  
+  ===============================================    
+  Submission Form
+  ===============================================
+*/
 
 input {
   margin-bottom: 16px;
@@ -123,3 +135,30 @@ input[type="text"], [type="date"], [type="url"]  {
   font-size: 16px;
   width: 100px;
 }
+
+/*  
+  ===============================================    
+  Predictions Display
+  ===============================================
+*/
+
+.prediction {
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid gray;
+}
+
+.prediction span {
+  float: right;
+}
+
+.prediction a {
+  text-decoration: none;
+  color: #FF8000;
+  padding-left: 10px;
+}
+
+.status-selector {
+  float: right;
+}
+
