@@ -4,10 +4,10 @@ var Sequelize = require('sequelize');
 var sequelize = new Sequelize('predictster', 'root', '');
 
 // database for deployment
-// var sequelize = new Sequelize('heroku_1d53ef85d78ea23', 
-//   'bfe4707de06a77', '7adf373c', {
-//   host: 'us-cdbr-iron-east-02.cleardb.net',
-// });
+var sequelize = new Sequelize('heroku_20de66428caf43d', 
+  'b580f2d952a1f3', 'f3b326cc', {
+  host: 'us-cdbr-iron-east-02.cleardb.net',
+});
 
 exports.Predictions = Predictions = sequelize.define('Predictions', {
   user: Sequelize.STRING,
