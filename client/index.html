@@ -23,9 +23,11 @@
     
     <div class="container" ng-controller="addPrediction">
       <form ng-submit="submitPrediction()">
-        <label>Who made the prediction?</label><input type="text" name="entity" ng-model="prediction.entity">
+        <label>Who made the prediction?</label><input type="text" class="who" name="entity" ng-model="prediction.entity">
+        <label>Send Them a Notification</label><input type="checkbox" display="inline" ng-model="notify">
+        <div ng-if="notify"><label>Enter Their Email</label><input type="email" class="who" name="entity" ng-model="prediction.entityContact"></div>
         <label>What was the prediction?</label><input type="text" name="description" ng-model="prediction.description">
-        <label>When should we follow-up on the prediction?</label><input type="date" name="date" placeholder="none" ng-model="prediction.date"> 
+        <label>When should we follow-up on the prediction?</label><input type="date" class="when" name="date" placeholder="none" ng-model="prediction.date"> 
         <label>Do you have a link to the prediction?</label><input type="url" name="link" ng-model="prediction.link"> 
         <input type="submit" class="submit-btn">
       </form> 

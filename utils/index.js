@@ -44,12 +44,19 @@ exports.addPrediction = function(data, user, callback) {
   db.Predictions.create({
     user: user,
     entity: data.entity,
+    entity_contact: data.entityContact,
     description: data.description,
     date: data.date,
     link: data.link,
     status: 'pending',
     followup_email: 0
-  }).then(callback);
+  }).then(
+    function() {
+      if (data.entityContact) {
+        sendNotificationEmail(data.entityContact, data.description);
+      }
+    }
+  ).then(callback);
 };
 
 // updates prediction status
@@ -95,8 +102,24 @@ var sendFollowUpEmail = function(user, callback) {
       console.log('error sending email');
       return;
     }
-    console.log('email sent');
+    console.log('follow up email sent');
     callback();
+  });
+};
+
+// notification email template
+var sendNotificationEmail = function(contact, prediction) {
+  mailTransport.sendMail({
+    from: '"Predictster" <predictsterfollowup@gmail.com>',
+    to: contact,
+    subject: 'Your prediction is being tracked on Predictster',
+    text: 'You made the following prediction that is now being tracked on Predictster: ' + prediction
+  }, function(err) {
+    if (err) {
+      console.log('error sending email');
+      return;
+    }
+    console.log('notification email sent');
   });
 };
 
@@ -121,4 +144,3 @@ exports.checkForFollowUp = function(user) {
     }
   });
 };
-

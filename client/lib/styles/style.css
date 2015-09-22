@@ -130,6 +130,10 @@ input[type="text"], [type="date"], [type="url"], [type="email"], [type="password
   font-size:18px;
 }
 
+.who {
+  width: 350px;
+}
+
 .submit-btn {
   background-color: white;
   font-size: 16px;
