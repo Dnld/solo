@@ -14,6 +14,11 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// main page get request handler
+app.get('/', utils.checkUser, function(req, res) {
+  res.redirect('/index.html');
+});
+
 // sign up
 app.post('/api/sign-up', function(req, res) {
   utils.addUser(req.body, function() {

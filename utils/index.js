@@ -3,7 +3,8 @@ var nodemailer = require('nodemailer');
 
 // checks if user is logged in
 exports.checkUser = function(req, res, next) {
-  if (!req.session.loggedIn) {    
+  if (!req.session.loggedIn) {
+    res.redirect('/signin.html');    
   } else {
     next();
   }
