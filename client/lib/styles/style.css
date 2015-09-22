@@ -146,6 +146,11 @@ input[type="text"], [type="date"], [type="url"], [type="email"], [type="password
   ===============================================
 */
 
+.search {
+  margin-bottom: 46px;
+  width: 350px;
+}
+
 .prediction {
   margin-bottom: 14px;
   padding-bottom: 8px;
