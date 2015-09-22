@@ -158,6 +158,10 @@ input[type="text"], [type="date"], [type="url"], [type="email"], [type="password
   padding-left: 10px;
 }
 
+.prediction p {
+  font-size: 18px;
+}
+
 .status-selector {
   float: right;
 }

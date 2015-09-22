@@ -10,11 +10,15 @@ var sequelize = new Sequelize('predictster', 'root', '');
 // });
 
 exports.Predictions = Predictions = sequelize.define('Predictions', {
+  user: Sequelize.STRING,
   entity: Sequelize.STRING,
+  entity_contact: Sequelize.STRING,
   description: Sequelize.TEXT('medium'),
   date: Sequelize.STRING,
   link: Sequelize.STRING,
   status: Sequelize.STRING,
+  followup_link: Sequelize.STRING,
+  followup_email: Sequelize.INTEGER
 });
 
 exports.Users = Users = sequelize.define('Users', {

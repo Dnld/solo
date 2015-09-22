@@ -14,13 +14,6 @@ app.use(session({
   saveUninitialized: false
 }));
 
-var checkUser = function(req, res, next) {
-  if (!req.session.loggedIn) {    
-  } else {
-    next();
-  }
-};
-
 // sign up
 app.post('/api/sign-up', function(req, res) {
   utils.addUser(req.body, function() {
@@ -42,22 +35,22 @@ app.post('/api/sign-in', function(req, res) {
 });
 
 // api to serve all predictions to client
-app.get('/api/all-predictions', checkUser, function(req, res) {
+app.get('/api/all-predictions', utils.checkUser, function(req, res) {
   utils.sendAllPredictions(function(results) {
-    console.log(req.session.user);
     res.json(results);
   });
 });
 
 // api to post predictions
-app.post('/api/predictions', checkUser, function(req, res) {  
-  utils.addPrediction(req.body, function() {
+app.post('/api/predictions', utils.checkUser, function(req, res) {  
+  var user = req.session.user;
+  utils.addPrediction(req.body, user, function() {
     res.sendStatus(200);
   });
 });
 
 // api to update prediction status
-app.post('/api/prediction-status', checkUser, function(req, res) {
+app.post('/api/prediction-status', utils.checkUser, function(req, res) {
   utils.updatePredictionStatus(req.body, function() {
     res.sendStatus(200);
   });
@@ -65,5 +58,8 @@ app.post('/api/prediction-status', checkUser, function(req, res) {
 
 // serves static dependencies
 app.use(express.static(__dirname + "/client"));
+
+// checks every 3 seconds if a follow up email is needed
+setInterval(utils.checkForFollowUp, 3000);
 
 module.exports = app;
