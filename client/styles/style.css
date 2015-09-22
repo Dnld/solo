@@ -96,17 +96,30 @@ nav a {
 .prediction-form {
   border: 1px solid gray;
   border-radius: 30px;
-  margin-top: 200px;
-  padding: 60px;
+  margin-top: 130px;
+  padding: 60px 60px 40px 60px;
   margin-left: 20%;
   margin-right: 20%;
   font-size: 20px;
-}
-
-form {
-  
+  color: #636363;
 }
 
 input {
+  margin-bottom: 16px;
+  margin-top: 5px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: none;
   display: block;
+  width: 740px;
+}
+
+input[type="text"], [type="date"], [type="url"]  {
+  font-size:18px;
+}
+
+.submit-btn {
+  background-color: white;
+  font-size: 16px;
+  width: 100px;
 }

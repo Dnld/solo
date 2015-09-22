@@ -9,7 +9,7 @@ angular.module('predictster', [])
       method: 'POST',
       url: '/api/predictions',
       data: $scope.prediction  
-    });
+    }).then(window.location.reload());
   };
 
 })
